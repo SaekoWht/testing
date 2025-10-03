@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Recorder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="compass">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="1"/>
+                    <circle cx="50" cy="50" r="45" fill="rgba(255,255,255,0.1)" stroke="rgba(0,0,0,0.4)" stroke-width="0.5"/>
+                    <line x1="50" y1="5" x2="50" y2="20" stroke="rgba(0,0,0,0.6)" stroke-width="1"/>
+                    <line x1="50" y1="80" x2="50" y2="95" stroke="rgba(0,0,0,0.6)" stroke-width="1"/>
+                    <line x1="5" y1="50" x2="20" y2="50" stroke="rgba(0,0,0,0.6)" stroke-width="1"/>
+                    <line x1="80" y1="50" x2="95" y2="50" stroke="rgba(0,0,0,0.6)" stroke-width="1"/>
+                    <polygon points="50,15 45,45 50,50 55,45" fill="rgba(0,100,200,0.7)"/>
+                    <polygon points="50,85 45,55 50,50 55,55" fill="rgba(200,50,50,0.7)"/>
+                    <circle cx="50" cy="50" r="3" fill="rgba(0,0,0,0.8)"/>
+                    <text x="50" y="12" text-anchor="middle" font-size="8" fill="rgba(0,0,0,0.7)" font-weight="bold">N</text>
+                    <text x="50" y="94" text-anchor="middle" font-size="8" fill="rgba(0,0,0,0.7)" font-weight="bold">S</text>
+                    <text x="10" y="53" text-anchor="middle" font-size="8" fill="rgba(0,0,0,0.7)" font-weight="bold">W</text>
+                    <text x="90" y="53" text-anchor="middle" font-size="8" fill="rgba(0,0,0,0.7)" font-weight="bold">E</text>
+                </svg>
+            </div>
+            <div class="video-container">
+                <video id="webcam" autoplay muted></video>
+                <canvas id="canvas"></canvas>
+                <div class="timestamp" id="timestamp">00:23</div>
+
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="header-section">
+                <div class="logos">
+                    <img src="logo (2).png" alt="CCRAS Logo" class="logo-ccras">
+                    <img src="logo (1).png" alt="BHU Logo" class="logo-bhu">
+                </div>
+                <div class="header-text">
+                    <div class="jointly-text">JOINTLY DESIGNED<br>AND DEVELOPED BY</div>
+                    <div class="ccras-text">CCRAS-BHU</div>
+                </div>
+            </div>
+            
+            <div class="form-fields">
+                <div class="input-group">
+                    <span class="icon camera-icon">📹</span>
+                    <select id="cameraSelect">
+                        <option value="">Select Camera</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <span class="icon user-icon">👤</span>
+                    <input type="text" id="nameInput" placeholder="Enter Name *" required>
+                </div>
+                <div class="input-group">
+                    <span class="icon calendar-icon">🎂</span>
+                    <input type="text" id="dobInput" placeholder="Date of Birth *" required>
+                </div>
+                <div class="input-group">
+                    <span class="icon gender-icon">👥</span>
+                    <select id="genderInput" required>
+                        <option value="">Select Gender *</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <span class="icon calendar-icon">📅</span>
+                    <input type="text" id="dateInput" placeholder="Date *" required>
+                </div>
+                <div class="input-group">
+                    <span class="icon phone-icon">📞</span>
+                    <input type="tel" id="phoneInput" placeholder="Enter Phone Number *" required>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="btn-control" id="playBtn">▶</button>
+                <button class="btn-control" id="pauseBtn">⏸</button>
+                <button class="btn-control" id="stopBtn">⏹</button>
+            </div>
+            
+            <div class="save-section">
+                <button class="btn-save" id="saveBtn">SAVE</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
